@@ -8,7 +8,7 @@ new itemdetail<a href=?controller=orders&action=create>Click</a>
 </form>
 
 <table  border = 1>
-<tr></tr><td>o_id</td><td>c_id</td><td>p_id</td><td>o_status</td><td>o_date</td><td>o_total</td><td>delete</td></tr>
+<tr></tr><td>รหัสออเดอร์</td><td>รหัสลูกค้า</td><td>รหัสสินค้า</td><td>Status</td><td>วันที่ออเดอร์</td><td>ราคาสุทธิ</td><td>delete</td></tr>
 <?php foreach($orders as $line)                
 {
     echo"<tr><td>$line->o_id</td>

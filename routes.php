@@ -1,5 +1,5 @@
 <?php  
-    $controllers = array('pages'=>['home','error'],'customer' => ['index','delete','deleteConfirm','search','create','add'],'product' => ['index','delete','deleteConfirm','search','create','add','update'],'orders' => ['index','delete','deleteConfirm','search','create','add']);
+    $controllers = array('pages'=>['home','error'],'customer' => ['index','delete','deleteConfirm','search','create','add'],'product' => ['index','delete','deleteConfirm','search','create','add','update'],'orders' => ['index','delete','deleteConfirm','search','create','add'],'bill' => ['index','delete','deleteConfirm','search','create','add']);
 
     function call($controller,$action){
         require_once("controllers/".$controller."_controller.php");
@@ -11,6 +11,8 @@
                                 $controller = new productController(); break;
             case "orders":     require_once("models/ordersModel.php");
                                 $controller = new ordersController(); break;
+            case "bill":     require_once("models/billModel.php");
+                                $controller = new billController(); break;                    
         }
         $controller->{$action}();
     }
