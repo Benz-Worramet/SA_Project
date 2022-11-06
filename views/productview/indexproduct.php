@@ -1,4 +1,4 @@
-new itemdetail<a href=?controller=product&action=create>Click</a>
+New Product<a href=?controller=product&action=create>Click</a>
 <h1 > Product</h1>
 <br>
 <form method ="get" action="">
@@ -17,7 +17,7 @@ new itemdetail<a href=?controller=product&action=create>Click</a>
             <td>$line->p_cost</td>
             <td>$line->p_status</td>
             <td>
-            <a href=?controller=product&action=update&p_id=$line->p_id
+            <a href=?controller=product&action=updateFrom&p_id=$line->p_id
             >update</a>
             </td>
             <td>

@@ -30,25 +30,21 @@
         return $itemList;
     }
     public static function addorders($c_id,$p_id,$o_status,$o_date,$o_total){
-        echo"======2======";
-        echo"$c_id,$p_id,$o_status,$o_date,$o_total";
-        echo"=========";
+
         require("connection_connect.php");
-        echo "==============1================";
-        //$sql = "select  * from line_Detail natural join ItemColor natural join Item;"
+       
         $sql = "insert into orders (c_id,p_id,o_status,o_date,o_total) VALUES ('$c_id','$p_id','$o_status','$o_date','$o_total');";
-        echo "==============2================";
+
         $result =$conn->query($sql);
         require("connection_close.php");
         return "add success $result rows";
 
     }
     public static function search($key){
-        echo $key;
+
         require("connection_connect.php");
         $sql = "select  *
         from orders where orders.o_id like '%$key%' ";
-        echo "=======111==";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc()){
             $o_id = $myRow["o_id"];
@@ -80,20 +76,30 @@
         require("connection_close.php");
         return new ordersModel($o_id,$c_id,$p_id,$o_status,$o_date,$o_total);
     }
+    public static function update($o_id,$o_status){
+ 
+        require("connection_connect.php");
+        $sql = " update  orders SET o_status = '$o_status'
+                where o_id ='$o_id' "; 
+        
+        $result =$conn->query($sql);
+        require("connection_close.php");
+        return "update success $result rows";
+    }
 
     public static function delete($o_id){
-        echo"$o_id";
-        echo"=========";
+ 
         require("connection_connect.php");
-        echo "==============1================";
         $sql = " delete from orders
                 where o_id = '$o_id' ";
-        echo $o_id;
-        echo "===============2================";
+
+
         $result =$conn->query($sql);
         require("connection_close.php");
         return "delete success $result rows";
     }
+    
 }
+
    
 ?>

@@ -7,9 +7,7 @@
     }
     public function create(){
         $bill = billModel::getAll();
-        //$itemColor = itemColorModel::getAll();
-        //$item  = Item::getAll();
-  
+
         require_once('views/billview/create.php');
        
     }

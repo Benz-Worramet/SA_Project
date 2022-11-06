@@ -7,8 +7,7 @@
     }
     public function create(){
         $product = productModel::getAll();
-        //$itemColor = itemColorModel::getAll();
-        //$item  = Item::getAll();
+
   
         require_once('views/productview/create.php');
        
@@ -21,27 +20,31 @@
     }
 
     public function add(){
-        // $color_name = $_GET['colorName'];
-        // $item_name = $_GET['itemName'];
-        // $item_id = $_GET['itemid'];
+
 
         $p_name = $_GET['p_name'];
         $p_price = $_GET['p_price'];
         $p_cost = $_GET['p_cost'];
         $p_status = $_GET['p_status'];
         productModel::addproduct($p_name,$p_price,$p_cost,$p_status);
-        echo"===================3=================";
+
         productController::index();
     }
     public function update(){
-
-        $p_name = $_GET['p_name'];
+        $p_id = $_GET['p_id'];
         $p_price = $_GET['p_price'];
-        $p_cost = $_GET['p_cost'];
         $p_status = $_GET['p_status'];
-        productModel::update($p_name,$p_price,$p_cost,$p_status);
-        echo"===================3=================";
+        productModel::update($p_id,$p_price,$p_status);
         productController::index();
+    }
+    public function updateFrom(){
+
+        $p_id = $_GET['p_id'];
+        $product = productModel::getAll();
+        $productby = productModel::get($p_id);
+
+        require_once('views/productview/update.php');
+       
     }
 
    public function deleteConfirm(){

@@ -1,5 +1,4 @@
 <form method = "get" action="">
-
 <label>Status<select name="o_status">
     <?php {
         echo"<option value ='จ่ายแล้ว'>จ่ายแล้ว</option>";
@@ -7,14 +6,13 @@
     }?>
 
 </select></label><br>
-<label>รหัสลูกค้า<input type="text" name ="c_id"/></label><br>
-<label>รหัสสินค้า<input type="text" name ="p_id"/></label><br>
-<label>วันที่ออเดอร์(YYYY-MM-DD)<input type="text" name ="o_date"/></label><br>
-<label>ราคาสุทธิ<input type="text" name ="o_total"/></label><br>
+
+
 
 
 <input type="hidden" name="controller" value="orders"/>
+<input type="hidden" name="o_id" value="<?php echo $ordersby->o_id?>"/>
 <button type = "submit" name="action" value="index">back</button>
-<button type = "submit" name="action" value="add">add</button>
+<button type = "submit" name="action" value="update">update</button>
 
 </form>

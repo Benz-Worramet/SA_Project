@@ -5,8 +5,17 @@
         echo"<option value ='เบิก'>เบิก</option>";
     }?>
 
-<input type="hidden" name="controller" value="lineDetail"/>
+</select></label><br>
+
+<label>ราคาที่จะขาย<input type="text" name ="p_price"
+value="<?php echo $productby->p_price?>"/>
+</label><br>
+    
+
+
+<input type="hidden" name="controller" value="product"/>
+<input type="hidden" name="p_id" value="<?php echo $productby->p_id?>"/>
 <button type = "submit" name="action" value="index">back</button>
-<button type = "submit" name="action" value="update">add</button>
+<button type = "submit" name="action" value="update">update</button>
 
 </form>

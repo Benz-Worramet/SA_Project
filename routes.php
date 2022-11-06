@@ -1,5 +1,10 @@
 <?php  
-    $controllers = array('pages'=>['home','error'],'customer' => ['index','delete','deleteConfirm','search','create','add'],'product' => ['index','delete','deleteConfirm','search','create','add','update'],'orders' => ['index','delete','deleteConfirm','search','create','add'],'bill' => ['index','delete','deleteConfirm','search','create','add']);
+    $controllers = array('pages'=>['home','error'],
+    'customer' => ['index','delete','deleteConfirm','search','create','add'],
+    'product' => ['index','delete','deleteConfirm','search','create','add','update','updateFrom'],
+    'orders' => ['index','delete','deleteConfirm','search','create','add','update','updateFrom'],
+    'bill' => ['index','delete','deleteConfirm','search','create','add'],
+    'tracking' => ['index','delete','deleteConfirm','search','create','add','update','updateFrom']);
 
     function call($controller,$action){
         require_once("controllers/".$controller."_controller.php");
@@ -12,13 +17,15 @@
             case "orders":     require_once("models/ordersModel.php");
                                 $controller = new ordersController(); break;
             case "bill":     require_once("models/billModel.php");
-                                $controller = new billController(); break;                    
+                                $controller = new billController(); break;
+            case "tracking":     require_once("models/trackingModel.php");
+                                $controller = new trackingController(); break;                                         
         }
         $controller->{$action}();
     }
 
     if(array_key_exists($controller,$controllers)){
-        echo"sdfsdfsdfsdf";
+        echo"ระบบสั่งซื้ออุปกรณ์เกี่ยวกับกำเนิดไฟฟ้าของ บริษัท อินโนวาเร่ จำกัด";
 
         if(in_array($action,$controllers[$controller])){
 

@@ -1,4 +1,4 @@
-<?php echo"<br>มึงลบถูกแล้วหรอดูดีๆนะไอ้สัส<br>
+<?php echo"<br>Are you sure to delete this Customer<br>
             <br> $customer->c_id $customer->c_name $customer->c_tel $customer->c_address $customer->c_email <br>
 
             "?>

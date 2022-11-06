@@ -1,15 +1,11 @@
 <?php class customerController {
     public function index(){
         $customer = customerModel::getAll();
-
         require_once('views/Customerview/indexcustomer.php');
        
     }
     public function create(){
         $customer = customerModel::getAll();
-        //$itemColor = itemColorModel::getAll();
-        //$item  = Item::getAll();
-  
         require_once('views/Customerview/create.php');
        
     }
@@ -28,7 +24,6 @@
         $c_address = $_GET['c_address'];
         $c_email = $_GET['c_email'];
         customerModel::addCustomer($c_name,$c_tel,$c_address,$c_email);
-        echo"===================3=================";
         customerController::index();
     }
 

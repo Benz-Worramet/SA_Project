@@ -1,4 +1,4 @@
-new itemdetail<a href=?controller=bill&action=create>Click</a>
+New Bill<a href=?controller=bill&action=create>Click</a>
 <h1 > Bill</h1>
 <br>
 <form method ="get" action="">
@@ -8,7 +8,7 @@ new itemdetail<a href=?controller=bill&action=create>Click</a>
 </form>
 
 <table  border = 1>
-<tr></tr><td>รหัสบิล</td><td>รหัสออเดอร์</td><td>วันที่บิล</td><td>delete</td></tr>
+<tr></tr><td>รหัสบิล</td><td>รหัสออเดอร์</td><td>วันที่บิล(ป-ด-ว)</td><td>delete</td></tr>
 <?php foreach($bill as $line)                
 {
     echo"<tr><td>$line->b_id</td>

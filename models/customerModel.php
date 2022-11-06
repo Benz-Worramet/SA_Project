@@ -28,23 +28,19 @@
         return $itemList;
     }
     public static function addCustomer($c_name,$c_tel,$c_address,$c_email){
-        echo"$c_name,$c_tel,$c_address,$c_email";
-        echo"=========";
         require("connection_connect.php");
-        echo "==============1================";
         $sql = "insert into customer (c_name,c_tel,c_address,c_email) VALUES ('$c_name','$c_tel','$c_address','$c_email');";
-        echo "==============2================";
         $result =$conn->query($sql);
         require("connection_close.php");
         return "add success $result rows";
 
     }
     public static function search($key){
-        echo $key;
+
         require("connection_connect.php");
         $sql = "select  *
         from customer where customer.c_tel like '%$key%' ";
-        echo "=======111==";
+
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc()){
             $c_id = $myRow["c_id"];
@@ -76,14 +72,11 @@
     }
 
     public static function delete($c_id){
-        echo"$c_id";
-        echo"=========";
+
         require("connection_connect.php");
-        echo "==============1================";
         $sql = " delete from customer
                 where c_id = '$c_id' ";
-        echo $c_id;
-        echo "===============2================";
+
         $result =$conn->query($sql);
         require("connection_close.php");
         return "delete success $result rows";

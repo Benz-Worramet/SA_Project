@@ -1,4 +1,4 @@
-<?php echo"<br>มึงลบถูกแล้วหรอดูดีๆนะไอ้สัส<br>
+<?php echo"<br>Are you sure to delete this Product <br>
             <br> $product->p_id $product->p_name $product->p_price $product->p_cost $product->p_status <br>
 
             "?>

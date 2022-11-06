@@ -1,4 +1,4 @@
-new itemdetail<a href=?controller=customer&action=create>Click</a>
+New Customer<a href=?controller=customer&action=create>Click</a>
 <h1 > Customer</h1>
 <br>
 <form method ="get" action="">
@@ -8,7 +8,7 @@ new itemdetail<a href=?controller=customer&action=create>Click</a>
 </form>
 
 <table  border = 1>
-<tr></tr><td>รหัสลูกค้า</td><td>ชื่อ-นามสกุล</td><td>เบอร์ติดต่อ</td><td>ที่อยู่</td><td>อีเมลล์</td></tr>
+<tr></tr><td>รหัสลูกค้า</td><td>ชื่อ-นามสกุล</td><td>เบอร์ติดต่อ</td><td>ที่อยู่</td><td>อีเมลล์</td><td>delete</td></tr>
 <?php foreach($customer as $line)                
 {
     echo"<tr><td>$line->c_id</td>
