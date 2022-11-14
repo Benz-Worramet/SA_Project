@@ -7,7 +7,8 @@
     }
     public function create(){
         $orders = ordersModel::getAll();
-
+        $product = productModel::getAll();
+        $customer = customerModel::getAll();
         require_once('views/ordersview/create.php');
        
     }
@@ -38,6 +39,8 @@
     }
     public function updateFrom(){
         $o_id = $_GET['o_id'];
+        $customer = customerModel::getAll();
+        $product = productModel::getAll();
         $orders = ordersModel::getAll();
         $ordersby = ordersModel::get($o_id);
 

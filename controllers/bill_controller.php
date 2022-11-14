@@ -7,7 +7,7 @@
     }
     public function create(){
         $bill = billModel::getAll();
-
+        $order = ordersModel::getAll();
         require_once('views/billview/create.php');
        
     }

@@ -13,12 +13,17 @@
             case "customer":  require_once("models/customerModel.php");
                                 $controller = new customerController();break;
             case "product":     require_once("models/productModel.php");
-                                $controller = new productController(); break;
+                                $controller = new productController();
+                                 break;
             case "orders":     require_once("models/ordersModel.php");
+                                require_once("models/customerModel.php");
+                                require_once("models/productModel.php");
                                 $controller = new ordersController(); break;
             case "bill":     require_once("models/billModel.php");
+                              require_once("models/ordersModel.php");
                                 $controller = new billController(); break;
             case "tracking":     require_once("models/trackingModel.php");
+                                 require_once("models/billModel.php");
                                 $controller = new trackingController(); break;                                         
         }
         $controller->{$action}();

@@ -7,6 +7,7 @@
     }
     public function create(){
         $tracking = trackingModel::getAll();
+        $bill = billModel::getAll();
 
         require_once('views/trackingview/create.php');
        
