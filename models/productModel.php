@@ -1,12 +1,12 @@
 <?php class productModel{
-    public $p_id,$p_name,$p_price,$p_cost,$p_status;
+    public $p_id,$p_name,$p_price,$p_cost,$p_amount;
 
-    public function __construct($p_id,$p_name,$p_price,$p_cost,$p_status){
+    public function __construct($p_id,$p_name,$p_price,$p_cost,$p_amount){
         $this->p_id = $p_id;
         $this->p_name = $p_name;
         $this->p_price = $p_price;
         $this->p_cost = $p_cost;
-        $this->p_status = $p_status;
+        $this->p_amount = $p_amount;
     }
     public static function getAll(){
         require("connection_connect.php");
@@ -19,17 +19,17 @@
             $p_name = $myRow["p_name"]; 
             $p_price = $myRow["p_price"];
             $p_cost = $myRow["p_cost"];         
-            $p_status =  $myRow["p_status"] ;
-            $itemList[]= new productModel($p_id,$p_name,$p_price,$p_cost,$p_status);
+            $p_amount =  $myRow["p_amount"] ;
+            $itemList[]= new productModel($p_id,$p_name,$p_price,$p_cost,$p_amount);
             
         }
 
         require("connection_close.php");
         return $itemList;
     }
-    public static function addproduct($p_name,$p_price,$p_cost,$p_status){
+    public static function addproduct($p_name,$p_price,$p_cost,$p_amount){
         require("connection_connect.php");
-        $sql = "insert into product (p_name,p_price,p_cost,p_status) VALUES ('$p_name','$p_price','$p_cost','$p_status');";
+        $sql = "insert into product (p_name,p_price,p_cost,p_amount) VALUES ('$p_name','$p_price','$p_cost','$p_amount');";
         $result =$conn->query($sql);
         require("connection_close.php");
         return "add success $result rows";
@@ -45,8 +45,8 @@
             $p_name = $myRow["p_name"];
             $p_price = $myRow["p_price"];
             $p_cost = $myRow["p_cost"];         
-            $p_status =  $myRow["p_status"] ;
-            $itemList[]= new productModel($p_id,$p_name,$p_price,$p_cost,$p_status);       
+            $p_amount =  $myRow["p_amount"] ;
+            $itemList[]= new productModel($p_id,$p_name,$p_price,$p_cost,$p_amount);       
         }
         require("connection_close.php");
         return $itemList;
@@ -62,15 +62,15 @@
         $p_name = $myRow["p_name"];
         $p_price = $myRow["p_price"];
         $p_cost = $myRow["p_cost"];         
-        $p_status =  $myRow["p_status"] ;
+        $p_amount =  $myRow["p_amount"] ;
         
      
         require("connection_close.php");
-        return new productModel($p_id,$p_name,$p_price,$p_cost,$p_status);
+        return new productModel($p_id,$p_name,$p_price,$p_cost,$p_amount);
     }
-    public static function update($p_id,$p_price,$p_status){
+    public static function update($p_id,$p_price,$p_amount){
         require("connection_connect.php");
-        $sql = " update  product SET p_price = '$p_price',p_status = '$p_status'
+        $sql = " update  product SET p_price = '$p_price',p_amount = '$p_amount'
                 where p_id ='$p_id' "; 
         
         $result =$conn->query($sql);

@@ -44,7 +44,7 @@
 
         require("connection_connect.php");
         $sql = "select  *
-        from orders where orders.o_id like '%$key%' ";
+        from orders where orders.o_status like '%$key%' ";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc()){
             $o_id = $myRow["o_id"];
@@ -53,7 +53,7 @@
             $o_status = $myRow["o_status"];         
             $o_date =  $myRow["o_date"] ;
             $o_total =  $myRow["o_total"] ;
-            $itemList[]= new ordersModel($o_id,$c_id,$p_id,$o_status,$o_date,$o_total);       
+            $itemList[] = new ordersModel($o_id,$c_id,$p_id,$o_status,$o_date,$o_total);       
         }
         require("connection_close.php");
         return $itemList;

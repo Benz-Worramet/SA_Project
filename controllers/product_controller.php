@@ -25,16 +25,16 @@
         $p_name = $_GET['p_name'];
         $p_price = $_GET['p_price'];
         $p_cost = $_GET['p_cost'];
-        $p_status = $_GET['p_status'];
-        productModel::addproduct($p_name,$p_price,$p_cost,$p_status);
+        $p_amount = $_GET['p_amount'];
+        productModel::addproduct($p_name,$p_price,$p_cost,$p_amount);
 
         productController::index();
     }
     public function update(){
         $p_id = $_GET['p_id'];
         $p_price = $_GET['p_price'];
-        $p_status = $_GET['p_status'];
-        productModel::update($p_id,$p_price,$p_status);
+        $p_amount = $_GET['p_amount'];
+        productModel::update($p_id,$p_price,$p_amount);
         productController::index();
     }
     public function updateFrom(){

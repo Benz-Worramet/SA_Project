@@ -23,7 +23,6 @@
         $o_id = $_GET['o_id'];
         $b_date = $_GET['b_date'];
         billModel::addbill($o_id,$b_date);
-        echo"===================3=================";
         billController::index();
     }
 
