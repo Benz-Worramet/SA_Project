@@ -9,7 +9,7 @@
     public static function getAll(){
         require("connection_connect.php");
         $itemList=[];
-        $sql = "select  * from bill";
+        $sql = "select  b_id,o_id,b_date from bill";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc())
         {   
@@ -33,9 +33,9 @@
 
     }
     public static function search($key){
-        require("connection_connect.php");
-        $sql = "select  *
-        from bill where bill.b_id like '%$key%' ";
+        require("connection_connect.php");  
+        $sql = "select  b_id,o_id,b_date
+        from bill where bill.b_id like '%$key%' or bill.b_date like '%$key%' ";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc()){
             $b_id = $myRow["b_id"];  
@@ -51,7 +51,7 @@
     public static function get($b_id)
     {
         require("connection_connect.php");
-        $sql = "select  * from bill where b_id = '$b_id' ";
+        $sql = "select  b_id,o_id,b_date from bill where b_id = '$b_id' ";
         $result = $conn->query($sql);
         $myRow = $result->fetch_assoc();
         $b_id = $myRow["b_id"];  

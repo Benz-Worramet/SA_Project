@@ -11,7 +11,7 @@
     public static function getAll(){
         require("connection_connect.php");
         $itemList=[];
-        $sql = "select  * from customer";
+        $sql = "select  c_id , c_name , c_tel , c_address , c_email from customer";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc())
         {   
@@ -38,7 +38,7 @@
     public static function search($key){
 
         require("connection_connect.php");
-        $sql = "select  *
+        $sql = "select  c_id , c_name , c_tel , c_address , c_email
         from customer where customer.c_tel like '%$key%' ";
 
         $result = $conn->query($sql);
@@ -57,7 +57,7 @@
     public static function get($c_id)
     {
         require("connection_connect.php");
-        $sql = "select  * from customer where c_id = '$c_id' ";
+        $sql = "select  c_id , c_name , c_tel , c_address , c_email from customer where c_id = '$c_id' ";
         $result = $conn->query($sql);
         $myRow = $result->fetch_assoc();
         $c_id = $myRow["c_id"];

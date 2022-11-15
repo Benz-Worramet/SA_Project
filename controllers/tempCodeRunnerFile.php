@@ -1,2 +1,0 @@
-<?php
-$product = productModel::getAll();

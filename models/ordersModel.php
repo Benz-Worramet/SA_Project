@@ -12,7 +12,7 @@
     public static function getAll(){
         require("connection_connect.php");
         $itemList=[];
-        $sql = "select  * from orders";
+        $sql = "select  o_id,c_id,p_id,o_status,o_date,o_total from orders";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc())
         {   
@@ -43,8 +43,8 @@
     public static function search($key){
 
         require("connection_connect.php");
-        $sql = "select  *
-        from orders where orders.o_status like '%$key%' ";
+        $sql = "select  o_id,c_id,p_id,o_status,o_date,o_total
+        from orders where orders.o_status like '%$key%' or orders.o_id like '%$key%' ";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc()){
             $o_id = $myRow["o_id"];
@@ -62,7 +62,7 @@
     public static function get($o_id)
     {
         require("connection_connect.php");
-        $sql = "select  * from orders where o_id = '$o_id' ";
+        $sql = "select  o_id,c_id,p_id,o_status,o_date,o_total from orders where o_id = '$o_id' ";
         $result = $conn->query($sql);
         $myRow = $result->fetch_assoc();
         $o_id = $myRow["o_id"];

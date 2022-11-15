@@ -1,5 +1,5 @@
 <?php echo"<br>Are you sure to delete this Traking<br>
-            <br> $tracking->T_id $tracking->b_id $tracking->T_date $tracking->T_status  <br>
+        
 
             "?>
 <form method ="get" action = "">

@@ -1,6 +1,5 @@
 <?php echo"<br>Are you sure to delete this Product <br>
-            <br> $product->p_id $product->p_name $product->p_price $product->p_cost $product->p_status <br>
-
+    
             "?>
 <form method ="get" action = "">
     <input type ="hidden" name="controller" value="product"/>
@@ -10,3 +9,4 @@
 
     
     </form>
+   

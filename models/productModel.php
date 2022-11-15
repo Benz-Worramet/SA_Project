@@ -11,7 +11,7 @@
     public static function getAll(){
         require("connection_connect.php");
         $itemList=[];
-        $sql = "select  * from product";
+        $sql = "select p_id,p_name,p_price,p_cost,p_amount from product";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc())
         {   
@@ -37,7 +37,7 @@
     }
     public static function search($key){
         require("connection_connect.php");
-        $sql = "select  *
+        $sql = "select  p_id,p_name,p_price,p_cost,p_amount
         from product where product.p_name like '%$key%' or product.p_id like '%$key%'";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc()){

@@ -37,8 +37,8 @@
     public static function search($key){
 
         require("connection_connect.php");
-        $sql = "select  *
-        from tracking where tracking.T_id like '%$key%' ";
+        $sql = "select  T_id,b_id,T_date,T_status
+        from tracking where tracking.T_id like '%$key%' or tracking.T_date like '%$key%' ";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc()){
             $T_id = $myRow["T_id"];

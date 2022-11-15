@@ -16,7 +16,7 @@
             <div class="row">
                 <div class = "col-5">
                         <div class="input-group mb-3">
-                                <input type="text" name="key" class="form-control rounded" placeholder="กรอกรหัสสินค้า" aria-label="Search" aria-describedby="search-addon" />
+                                <input type="text" name="key" class="form-control rounded" placeholder="กรอกรหัสสินค้าหรือชื่อสินค้า" aria-label="Search" aria-describedby="search-addon" />
                                 <input type="hidden" name="controller" value="product">
                                 <button type="submit" class="btn btn-outline-primary" name ="action" value ="search">search</button>
                         </div>

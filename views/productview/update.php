@@ -10,7 +10,9 @@
 <label>ราคาที่จะขาย<input type="text" name ="p_price"
 value="<?php echo $productby->p_price?>"/>
 </label><br>
-    
+<label>จำนวนสินค้า<input type="text" name ="p_amount"
+value="<?php echo $productby->p_amount?>"/>
+</label><br>
 
 
 <input type="hidden" name="controller" value="product"/>

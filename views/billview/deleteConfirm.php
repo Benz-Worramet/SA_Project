@@ -1,5 +1,5 @@
 <?php echo"<br>Are you sersure to delete this Bill<br>
-            <br> $bill->b_id $bill->o_id  <br>
+    
 
             "?>
 <form method ="get" action = "">
