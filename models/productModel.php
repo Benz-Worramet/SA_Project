@@ -38,7 +38,7 @@
     public static function search($key){
         require("connection_connect.php");
         $sql = "select  *
-        from product where product.p_id like '%$key%' ";
+        from product where product.p_name like '%$key%' or product.p_id like '%$key%'";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc()){
             $p_id = $myRow["p_id"];

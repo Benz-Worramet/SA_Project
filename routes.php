@@ -30,7 +30,6 @@
     }
 
     if(array_key_exists($controller,$controllers)){
-        echo"ระบบสั่งซื้ออุปกรณ์เกี่ยวกับกำเนิดไฟฟ้าของ บริษัท อินโนวาเร่ จำกัด";
 
         if(in_array($action,$controllers[$controller])){
 
