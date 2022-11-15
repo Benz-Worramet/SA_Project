@@ -2,7 +2,7 @@
 
 <label>Status<select name="o_status">
     <?php {
-        echo"<option value ='จ่ายแล้ว'>จ่ายแล้ว</option>";
+
         echo"<option value ='ยังไม่จ่าย'>ยังไม่จ่าย</option>";
     }?>
 </select></label><br>
@@ -18,7 +18,7 @@
             echo"<option value =$list->p_id>$list->p_name</option>";
         }?>
 </select></label><br>
-<label>วันที่ออเดอร์(YYYY-MM-DD)<input type="date" id="birthday" name="o_date"/></label><br>
+<label>วันที่ออเดอร์<input type="date" id="birthday" name="o_date"/></label><br>
 <label>ราคาสุทธิ<input type="text" name ="o_total"/></label><br>
 
 
